@@ -1,0 +1,93 @@
+
+
+.menu {
+    display: flex;/*transforma os elementos filhos em flex-itens*/
+    justify-content: space-evenly;
+    align-items: center; /*centraliza no meio do eixo y*/
+    flex-wrap: wrap; /*quando o elemento não tiver espaço, há uma quebra*/
+    column-gap: 33px; /*largura da lacuna vertical entre elementos*/
+    /* row-gap serve para criar uma lacuna horizontal entre os elementos */
+    /* gap cria espaçamento verifical e horizontal */
+}   
+
+.destaques{
+    display: flex;
+    align-items: center;
+    gap: 10px; /*aplica em todos os sentidos quando tiver elementos*/
+
+}
+
+.destaques__barra{
+    flex-grow: 1; /*essa propriedade faz o elemento expandir junto com flex container*/
+}
+
+/*por mais que a disposição esteja parecida com o protótipo, na resolução para
+tablet, as colunas serão quebradas ao meio, e o display block não permite isso, 
+por isso é importante transforma-lo em flex*/
+.categorias__lista{
+    display: flex;
+    flex-direction: column; /*altera a direção do flex para column*/
+    row-gap: .5rem; /*espaço entre linhas*/
+}
+
+.eventos__lista{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    justify-content: center;
+}
+
+.eventos__item{
+    flex-grow: 1; /*os flex itens crescem proporcionalmente a tela, sem deixar espaço vazio*/
+    max-width: 400px; /*crescem no maximo até esse tamanho*/
+}
+
+
+/*tablet*/
+@media (min-width:720px) {/*telas com pelo menos 720pxx*/
+    .menu{
+       column-gap: 75px; 
+    }
+
+    .categorias__lista{
+        flex-wrap: wrap;
+        column-gap: 1.5rem; /*espaço entre colunas*/
+        row-gap: 1rem;
+    }
+
+    .eventos__lista{ /*no tablet o botão fica centralizado à direita*/
+        justify-content: flex-end;
+    }
+    
+}
+
+/*desktop*/
+@media (min-width:1400px) {
+    .menu{
+       column-gap: 105px;
+       flex: nowrap;
+    }
+
+    /*para alterar a ordem do elemento*/
+    .menu__item:nth-child(1){
+        order:1; 
+    }
+
+    .menu__item:nth-child(2){
+        order:3; 
+    }
+
+    .menu__item:nth-child(3){
+        order:4; 
+    }
+
+    .menu__item:nth-child(4){
+        order:5; 
+    }
+
+    .menu__item:nth-child(5){
+        order:2; 
+    }
+    
+}
