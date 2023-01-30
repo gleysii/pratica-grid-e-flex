@@ -43,6 +43,27 @@ por isso é importante transforma-lo em flex*/
     max-width: 400px; /*crescem no maximo até esse tamanho*/
 }
 
+.agenda__lista {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    justify-content: center;
+}
+
+.agenda_item {
+    flex-grow: 1;
+}
+
+.rodape{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;/*melhor utilizar justify content a column-gap porque é uma medida dinâmica*/
+}
+
+.rodape__logo {
+    align-self: end; /*essa propriedade modifica o elemento fora do eixo principal*/
+}
 
 /*tablet*/
 @media (min-width:720px) {/*telas com pelo menos 720pxx*/
